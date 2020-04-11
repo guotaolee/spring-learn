@@ -7,5 +7,6 @@
     <!--    开启ioc注解支持-->
     <context:annotation-config/>
     <!--    开启aop注解支持-->
+
     <aop:aspectj-autoproxy/>
 </beans>
