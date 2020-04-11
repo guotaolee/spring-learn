@@ -4,9 +4,12 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!--    开启ioc注解支持-->
-    <context:annotation-config/>
-    <!--    开启aop注解支持-->
 
-    <aop:aspectj-autoproxy/>
+    <!--设值注入方式，引用时要调用set方法-->
+    <bean id="injectionService" class="ioc.service.serviceImpl.SetterInjectionServiceImpl">
+        <property name="injectionDao" ref="injectionDao"/>
+    </bean>
+
+    <bean id="injectionDao" class="ioc.dao.daoImpl.InjectionDaoImpl"></bean>
+
 </beans>
